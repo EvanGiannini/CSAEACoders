@@ -1,6 +1,6 @@
 # GitHub Codespaces ♥️ Django
 
-Welcome to your shiny new Codespace running Django! We've got everything fired up and running for you to explore Django.
+HI to your Dinosaur new Codespace running Django! We've got everything fired up and running for you to explore Django.
 
 You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
 
