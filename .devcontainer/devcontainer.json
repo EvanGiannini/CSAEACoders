@@ -12,7 +12,7 @@
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "Dinosaur/templates/myfirst.html"
+        "hello_world/templates/index.html"
       ]
     },
     "vscode": {

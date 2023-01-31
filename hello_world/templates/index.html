@@ -1,29 +1,220 @@
-<!--
-
-<br />
-<b>Notice</b>:  Undefined variable: SERVER_ROOT in <b>/home/yorq6fgakkgm/domains/csszengarden.com/html/examples/index.php</b> on line <b>11</b><br />
-<br />
-<b>Notice</b>:  Undefined variable: SERVER_ROOT in <b>/home/yorq6fgakkgm/domains/csszengarden.com/html/examples/src.php</b> on line <b>5</b><br />
-<br />
-<b>Notice</b>:  Undefined variable: SERVER_ROOT in <b>/home/yorq6fgakkgm/domains/csszengarden.com/html/examples/src.php</b> on line <b>8</b><br />
-<br />
-<b>Notice</b>:  Undefined variable: SERVER_ROOT in <b>/home/yorq6fgakkgm/domains/csszengarden.com/html/examples/src.php</b> on line <b>11</b><br />
-<br />
-<b>Notice</b>:  Undefined variable: SERVER_ROOT in <b>/home/yorq6fgakkgm/domains/csszengarden.com/html/examples/src.php</b> on line <b>12</b><br />
-<br />
-<b>Notice</b>:  Undefined index: pg in <b>/home/yorq6fgakkgm/domains/csszengarden.com/html/includes/functions.php</b> on line <b>91</b><br />
-<br />
-<b>Notice</b>:  Undefined variable: SERVER_ROOT in <b>/home/yorq6fgakkgm/domains/csszengarden.com/html/examples/src.php</b> on line <b>18</b><br />
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+/* css Zen Garden submission 217 - 'Screen Filler', by Elliot Jay Stocks, http://elliotjaystocks.com/  */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+	
+	/* TYPEKIT_KIT_ID: lxq7gid */
+
+	/*
+	================================================
+	CSS Zen Garden theme for Typekit 01
+	================================================
+	Handcrafted by Elliot Jay Stocks
+	http://elliotjaystocks.com/
+	Last updated on 18.11.2013
+	================================================
+	01	Sensible Defaults
+	02	Typography
+	03	Layout
+	04	Media Queries
+	================================================
+	*/
+
+	/* ---------------------------------------------------------------------------------------------------------- 
+	01 Sensible defaults ----------------------------------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------- */
+
+	* 								{ margin:0; padding:0; /* So sue me */ }
+
+	div,
+	article,
+	section,
+	header,
+	footer,
+	nav,
+	figure,
+	li								{ position:relative; } /* For absolutely positioning elements within containers  */
+	.group:after 					{ display: block; height: 0; font-size: 0; content: "."; clear: both; visibility: hidden; } /* For clearing */
+	*								{ -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; } /* Apply a natural box layout model to all elements â€” see http://paulirish.com/2012/box-sizing-border-box-ftw */
+
+	::-moz-selection 				{ background:#333; color:#fff; }
+	::selection 					{ background:#333; color:#fff; }
+
+	/* ---------------------------------------------------------------------------------------------------------- 
+	02 Typography -----------------------------------------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------- */
+	/*
+
+	14 / 16	= 		0.875em 		(14px equivalent)
+	16 / 16	= 		1em 			(16px equivalent)
+	18 / 16 = 		1.125em 		(18px equivalent)
+	21 / 16 = 		1.3125em 		(21px equivalent)
+	24 / 16 = 		1.5em 			(24px equivalent)
+	30 / 16 = 		1.875em 		(30px equivalent)
+	36 / 16 = 		2.25em 			(36px equivalent)
+	48 / 16 = 		3em 			(48px equivalent)
+	60 / 16 = 		3.75em 			(60px equivalent)
+	72 / 16 = 		4.5em 			(72px equivalent)
+	96 / 16 = 		6em 			(96px equivalent)
+
+	*/
+
+	/* Rendering */
+	body,
+	input,
+	textarea 						{ color:#333; /*-webkit-font-smoothing:antialiased;*/ } 
+
+	/* Families */
+	body							{ font-family:"tablet-gothic", verdana, arial, sans-serif; /* Weights from Typekit: 300, 400 */ }
+	h2,
+	h3 								{ font-family:"tablet-gothic-condensed", "arial narrow", arial, verdana, sans-serif; /* Weights from Typekit: 200, 900 */ }
+
+	/* Headings */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 								{ font-weight:normal; }
+	h1 								{ background:#cd063b; color:#fff; display:inline-block; margin-bottom:1em; margin-left:10em; padding:0.5em 1em; }
+	h2 								{ color:#fff; font-weight:900; /* Heavy */ font-size:6em; letter-spacing:1px; line-height:1em; }
+	h3 								{ font-size:2.25em; font-weight:200; /* Thin */ letter-spacing:1px; line-height:1em; padding:0.5em 0 0.25em 0; }
+
+	/* Links */
+	a 								{ border-bottom:1px solid rgba(0,0,0,0.2); color:#333; text-decoration:none; -moz-transition:border-color 0.2s ease-in-out; -ms-transition:border-color 0.2s ease-in-out; -o-transition:border-color 0.2s ease-in-out; -webkit-transition:border-color 0.2s ease-in-out; transition:border-color 0.2s ease-in-out; }
+	a:hover 						{ border-color:#ea2e49; }
+	section.intro div.summary p a,
+	div.explanation p a,
+	div.participation p a			{ color:#fff; }
+	div.participation p a:hover		{ border-color:#fff; }
+
+	/* Paragraph styles */
+	p,
+	li 								{ font-size:1em; font-weight:400; /* Regular */ line-height:1.5em; padding:0.5em 0; }
+	h1,
+	section.intro div.summary p,
+	div.requirements p:last-child 	{ font-weight:300; letter-spacing:2px; text-transform:uppercase; }
+	section.intro div.summary p:last-child, 
+	div.requirements p:last-child 	{ border-top:1px solid #ea2e49; margin-top:1em; padding-top:1.5em; }
+
+	/* Other bits & bobs */
+	em,
+	strong 							{ font-style:normal; font-weight:400; }
+
+	/* ---------------------------------------------------------------------------------------------------------- 
+	03 Layout ---------------------------------------------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------- */
+
+	html 							{ background:#daede2; padding:5%; }
+	body 							{ background:#77c4d3; }
+	div.page-wrapper 				{ z-index:2; }
+
+	section.intro 					{ padding:5%; }
+	section.intro div.summary 		{ color:#fff; padding:15% 0; }
+	section.intro div.preamble 		{ background:rgba(255,255,255,0.9); color:#333; margin-left:-30%; padding:5% 5% 5% 30%; }
+	div.main 						{ padding:5%; }
+	aside.sidebar 					{ background:rgba(246,247,146,0.9); padding:5%; }
+	aside.sidebar ul 				{ padding:0.5em 0 2em 0; }
+	aside.sidebar ul li 			{ color:rgba(0,0,0,0.4); list-style:none; margin:0; padding:0 0 0.825em 0; }
+	footer 							{ background:rgba(246,247,146,0.9); clear:both; color:#fff; padding:1em 5%; width:50%; }
+	footer a 						{ margin-right:0.5em; }
+
+	div.explanation 				{ color:#fff; padding:5%; }
+	div.participation 				{ background:rgba(234,46,73,0.9); color:#fff; padding:5%; }
+	div.benefits 					{ background:rgba(255,255,255,0.9); margin-top:10%; padding:5%; }
+	div.requirements 				{ background:rgba(255,255,255,0.9); padding:5%; }
+
+	/* ---------------------------------------------------------------------------------------------------------- 
+	04 Media queries (using a mobile-first approach) ------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------- */
+
+	/* 1 and up */	
+	@media screen and (min-width:1px) {
+
+		body 						{ font-size:85%; }
+
+	}
+
+
+	/* 550 and up */	
+	@media screen and (min-width:550px) {
+
+		h2 							{ font-size:10em; }
+		section.intro 				{ width:66.6%; }
+		aside.sidebar 				{ position:absolute; right:0; top:2.5%; width:32.75%; }
+		div.extra1 					{ background:rgba(51,55,69,0.9); bottom:0; right:0; position:fixed; top:0; width:30%; z-index:1; }
+		div.explanation 			{ float:left; width:50%; }
+		div.participation 			{ float:left; width:49%; }
+		div.benefits 				{ float:left; }
+		div.requirements 			{ float:left; }
+	}
+
+	/* 650 and up */	
+	@media screen and (min-width:650px) {
+
+		div.benefits 				{ margin-top:12%; width:30%; }
+		div.requirements 			{ width:69%; }
+
+	}
+
+	/* 700 and up */	
+	@media screen and (min-width:700px) {
+
+		body 						{ font-size:90%; }
+
+	}
+
+	/* 800 and up */	
+	@media screen and (min-width:800px) {
+
+		body 						{ font-size:100%; }
+
+	}
+
+	/* 900 and up */	
+	@media screen and (min-width:900px) {
+
+		body 						{ font-size:110%; }
+
+	}
+
+	/* 1500 and up */	
+	@media screen and (min-width:1500px) {
+
+		body 						{ font-size:125%; }
+
+	}
+
+	/* 1800 and up */	
+	@media screen and (min-width:1800px) {
+
+		body 						{ font-size:150%; }
+
+	}
+
+	/* 2100 and up */	
+	@media screen and (min-width:2100px) {
+
+		body 						{ font-size:175%; }
+
+	}
+
+
+	/* 2500 and up */	
+	@media screen and (min-width:2500px) {
+
+		body 						{ font-size:200%; }
+
+	}
+
+
+</style>
 	<meta charset="utf-8">
-	<title>Friend Zone!</title>
+	<title>Friend Zone</title>
 
-
-	<link rel="stylesheet" media="screen" href="style.css?v=8may2013">
+	<link rel="stylesheet" media="screen" href="/217/217.css?v=8may2013">
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.csszengarden.com/zengarden.xml">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +222,8 @@
 	<meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design.">
 	<meta name="robots" content="all">
 
+	<script src="http://use.typekit.net/lxq7gid.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
 
 	<!--[if lt IE 9]>
 	<script src="script/html5shiv.js"></script>
@@ -58,271 +251,22 @@
 
 	And a few tips on building your CSS file:
 
-- use :first-child, :last-child and :nth-child to get at non-classed elements
-- use ::before and ::after to create pseudo-elements for extra styling
-- use multiple background images to apply as many as you need to any element
-- use the Kellum Method for image replacement, if still needed. http://goo.gl/GXxdI
-- don't rely on the extra divs at the bottom. Use ::before and ::after instead.
+	- use :first-child, :last-child and :nth-child to get at non-classed elements
+	- use ::before and ::after to create pseudo-elements for extra styling
+	- use multiple background images to apply as many as you need to any element
+	- use the Kellum Method for image replacement, if still needed. http://goo.gl/GXxdI
+	- don't rely on the extra divs at the bottom. Use ::before and ::after instead.
 
 		
 -->
 
 <body id="css-zen-garden">
-	<div class="container">
-	  
-		{% block content %}
-		{% endblock %}
-<button class="button button1">Green</button>
-<button class="button button2">Blue</button>
 <div class="page-wrapper">
 
 	<section class="intro" id="zen-intro">
 		<header role="banner">
-			<h1>Friend Zone</h1>
-			<h2>Test for Friend Zone <abbr title="Cascading Style Sheets">CSS</abbr> Test2</h2>
-			<style type="text/css">
-				/* css Zen Garden default style v1.02 */
-/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
-
-/* This file based on 'Tranquille' by Dave Shea */
-/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
-/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
-
-/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
-.form-control-dark {
-  border-color: var(--bs-gray);
-}
-.form-control-dark:focus {
-  border-color: #fff;
-  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
-}
-
-.text-small {
-  font-size: 85%;
-}
-
-.dropdown-toggle {
-  outline: 0;
-}
-
-
-.button {
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 8px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button1 {
-  background-color: white;
-  color: black;
-  border: 2px solid #4CAF50;
-}
-
-.button1:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.button2 {
-  background-color: white;
-  color: black;
-  border: 2px solid #008CBA;
-}
-
-.button2:hover {
-  background-color: #008CBA;
-  color: white;
-}
-/* basic elements */
-html {
-	margin: 0;
-	padding: 0;
-	}
-body { 
-	font: 100% georgia, sans-serif;
-	line-height: 1.88889;
-	color: #555753; 
-	background: #fff url(http://csszengarden.com/001/blossoms.jpg) no-repeat bottom right; 
-	margin: 0; 
-	padding: 0;
-	}
-p { 
-	margin-top: 0; 
-	text-align: justify;
-	}
-h3 { 
-	font: italic normal 1.4em georgia, sans-serif;
-	letter-spacing: 1px; 
-	margin-bottom: 0; 
-	color: #7D775C;
-	}
-a:link { 
-	font-weight: bold; 
-	text-decoration: none; 
-	color: #B7A5DF;
-	}
-a:visited { 
-	font-weight: bold; 
-	text-decoration: none; 
-	color: #D4CDDC;
-	}
-a:hover, a:focus, a:active { 
-	text-decoration: underline; 
-	color: #9685BA;
-	}
-abbr {
-	border-bottom: none;
-	}
-
-
-/* specific divs */
-.page-wrapper { 
-	background: url(http://csszengarden.com/001/zen-bg.jpg) no-repeat top left; 
-	padding: 0 175px 0 110px;  
-	margin: 0; 
-	position: relative;
-	}
-
-.intro { 
-	min-width: 470px;
-	width: 100%;
-	}
-
-header h1 { 
-
-	margin-top: 10px;
-	display: block;
-	width: 219px;
-	height: 87px;
-	float: left;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	}
-header h2 { 
-	margin-top: 58px; 
-	margin-bottom: 40px; 
-	margin-right: 40px;
-	width: 12px; 
-	height: 18px; 
-	float: right;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	}
-header {
-	padding-top: 20px;
-	height: 87px;
-}
-
-.summary {
-	clear: both; 
-	margin: 20px 20px 20px 10px; 
-	width: 160px; 
-	float: left;
-	}
-.summary p {
-	font: italic 1.1em/2.2 georgia; 
-	text-align: center;
-	}
-
-.preamble {
-	clear: right; 
-	padding: 0px 10px 0 10px;
-	}
-.supporting {	
-	padding-left: 10px; 
-	margin-bottom: 40px;
-	}
-
-footer { 
-	text-align: center; 
-	}
-footer a:link, footer a:visited { 
-	margin-right: 20px; 
-	}
-
-.sidebar {
-	margin-left: 600px; 
-	position: absolute; 
-	top: 0; 
-	right: 0;
-	}
-.sidebar .wrapper { 
-	font: 10px verdana, sans-serif; 
-	background: transparent url(http://csszengarden.com/001/paper-bg.jpg) top left repeat-y; 
-	padding: 10px; 
-	margin-top: 150px; 
-	width: 130px; 
-	}
-.sidebar h3.select { 
-	background: transparent url(http://csszengarden.com/001/h3.gif) no-repeat top left; 
-	margin: 10px 0 5px 0; 
-	width: 97px; 
-	height: 16px; 
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.sidebar h3.archives { 
-	background: transparent url(http://csszengarden.com/001/h5.gif) no-repeat top left; 
-	margin: 25px 0 5px 0; 
-	width:57px; 
-	height: 14px; 
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.sidebar h3.resources { 
-	background: transparent url(http://csszengarden.com/001/h6.gif) no-repeat top left; 
-	margin: 25px 0 5px 0; 
-	width:63px; 
-	height: 10px; 
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-
-
-.sidebar ul {
-	margin: 0;
-	padding: 0;
-	}
-.sidebar li {
-	line-height: 1.3em; 
-	background: transparent url(http://csszengarden.com/001/cr1.gif) no-repeat top center; 
-	display: block; 
-	padding-top: 5px; 
-	margin-bottom: 5px;
-	list-style-type: none;
-	}
-.sidebar li a:link {
-	color: #988F5E;
-	}
-.sidebar li a:visited {
-	color: #B3AE94;
-	}
-
-
-.extra1 {
-	background: transparent url(http://csszengarden.com/001/cr2.gif) top left no-repeat; 
-	position: absolute; 
-	top: 40px; 
-	right: 0; 
-	width: 148px; 
-	height: 110px;
-	}
-			</style>
+			<h1>Friend</h1>
+			<h2>Friend <abbr title="Cascading Style Sheets">    Zone</abbr></h2>
 		</header>
 
 		<div class="summary" id="zen-summary" role="article">
@@ -331,8 +275,8 @@ footer a:link, footer a:visited {
 		</div>
 
 		<div class="preamble" id="zen-preamble" role="article">
-			<h3>The Road to MAKING FRIENDS</h3>
-			<p>Littering a dark and dreary COMPUTER SCIENCE CLASSROOM lay the past relics of browser-specific tags, incompatible <abbr title="Document Object Model">DOM</abbr>s, broken <abbr title="Cascading Style Sheets">CSS</abbr> support, and abandoned browsers.</p>
+			<h3>The Road to Enlightenment</h3>
+			<p>Littering a dark and dreary road lay the past relics of browser-specific tags, incompatible <abbr title="Document Object Model">DOM</abbr>s, broken <abbr title="Cascading Style Sheets">CSS</abbr> support, and abandoned browsers.</p>
 			<p>We must clear the mind of the past. Web enlightenment has been achieved thanks to the tireless efforts of folk like the <abbr title="World Wide Web Consortium">W3C</abbr>, <abbr title="Web Standards Project">WaSP</abbr>, and the major browser creators.</p>
 			<p>The CSS Zen Garden invites you to relax and meditate on the important lessons of the masters. Begin to see with clarity. Learn to use the time-honored techniques in new and invigorating fashion. Become one with the web.</p>
 		</div>
@@ -385,11 +329,11 @@ footer a:link, footer a:visited {
 				<nav role="navigation">
 					<ul>
 					<li>
-						<a href="/221/" class="design-name">TEST HERE</a> by						<a href="http://andrewlohman.com/" class="designer-name">Andrew Lohman</a>
+						<a href="https://www.google.com/search?q=potato&rlz=1CARLJX_enUS997&oq=potato&aqs=chrome.0.0i355i433i512j46i433i512j69i59j0i433i512l2j69i60l3.1746j0j7&sourceid=chrome&ie=UTF-8&safe=active&ssui=on" class="design-name">Back to Login</a>
 					</li>					<li>
-						<a href="/220/" class="design-name">Garments</a> by						<a href="http://danielmall.com/" class="designer-name">Dan Mall</a>
+						<a href="/220/" class="design-name">Profile</a> 
 					</li>					<li>
-						<a href="/219/" class="design-name">Steel</a> by						<a href="http://steffen-knoeller.de" class="designer-name">Steffen Knoeller</a>
+						<a href="/219/" class="design-name">Matches</a> 
 					</li>					<li>
 						<a href="/218/" class="design-name">Apothecary</a> by						<a href="http://trentwalton.com" class="designer-name">Trent Walton</a>
 					</li>					<li>
@@ -409,7 +353,7 @@ footer a:link, footer a:visited {
 				<nav role="navigation">
 					<ul>
 						<li class="next">
-							<a href="/214/page1">
+							<a href="/217/page1">
 								Next Designs <span class="indicator">&rsaquo;</span>
 							</a>
 						</li>
@@ -425,7 +369,7 @@ footer a:link, footer a:visited {
 				<h3 class="resources">Resources:</h3>
 				<ul>
 					<li class="view-css">
-						<a href="style.css" title="View the source CSS file of the currently-viewed design.">
+						<a href="/217/217.css" title="View the source CSS file of the currently-viewed design.">
 							View This Design&#8217;s <abbr title="Cascading Style Sheets">CSS</abbr>						</a>
 					</li>
 					<li class="css-resources">
